@@ -80,12 +80,10 @@ public class BasePage {
 
     }
 
-     public void assertTrueList(By elementBy, String role){
-         List<WebElement> rows = driver.findElements(elementBy);
+     public void assertTrueList(By tableBy, By elementBy, String role){
+         List<WebElement> rows = driver.findElements(tableBy);
          for (WebElement row : rows) {
-             {
-                 assertTrue(row.getText().contains(role));
-             }
+             assertTrue(row.findElement(elementBy).getText().contains(role));
 
          }
 
