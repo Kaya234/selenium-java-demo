@@ -39,7 +39,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void DefaultState() throws InterruptedException {
+    public void defaultState() throws InterruptedException {
 
         adminPage.checkDefaultInputValues();
 
@@ -47,7 +47,7 @@ public class AdminSearchTests {
 
     //Username field
     @Test
-    public void InvalidUsername() throws InterruptedException {
+    public void invalidUsername() throws InterruptedException {
         adminPage.searchUsername("David");
         adminPage.clickSearch();
         adminPage.checkSearchToastMessage("No Records Found");
@@ -56,7 +56,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void ValidUsernameNoCapitals() throws InterruptedException {
+    public void validUsernameNoCapitals() throws InterruptedException {
         adminPage.searchUsername("david.morris");
         adminPage.clickSearch();
         adminPage.searchResult("(1) Record Found");
@@ -64,7 +64,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void ValidUsernameCapitals() throws InterruptedException {
+    public void validUsernameCapitals() throws InterruptedException {
         adminPage.searchUsername(VALID_S_USERNAME);
         adminPage.clickSearch();
         adminPage.searchResult("(1) Record Found");
@@ -73,7 +73,7 @@ public class AdminSearchTests {
 
     //User Role Dropdown
     @Test
-    public void SelectOptionESS() throws InterruptedException {
+    public void selectOptionESS() throws InterruptedException {
         adminPage.selectOptionRole("ESS");
         adminPage.clickSearch();
         adminPage.checkSearchResultRole("ESS");
@@ -81,7 +81,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void SelectOptionAdmin() throws InterruptedException {
+    public void selectOptionAdmin() throws InterruptedException {
         adminPage.selectOptionRole("Admin");
         adminPage.clickSearch();
         adminPage.checkSearchResultRole("Admin");
@@ -90,14 +90,14 @@ public class AdminSearchTests {
 
     //Employee Name autocomplete Field
     @Test
-    public void NotUseAutocomplete() throws InterruptedException {
+    public void notUseAutocomplete() throws InterruptedException {
         adminPage.searchName(VALID_S_NAME);
         adminPage.clickSearch();
 
     }
 
     @Test
-    public void UseAutocomplete() throws InterruptedException {
+    public void useAutocomplete() throws InterruptedException {
         adminPage.searchName(VALID_S_NAME);
         adminPage.nameAutocomplete();
         adminPage.clickSearch();
@@ -107,14 +107,14 @@ public class AdminSearchTests {
 
     //Status Dropdown
     @Test
-    public void SelectOptionEnabled() throws InterruptedException {
+    public void selectOptionEnabled() throws InterruptedException {
         adminPage.selectOptionStatus("Enabled");
         adminPage.clickSearch();
         adminPage.checkSearchResultStatus("Enabled");
     }
 
     @Test
-    public void SelectOptionDisabled() throws InterruptedException {
+    public void selectOptionDisabled() throws InterruptedException {
         adminPage.selectOptionStatus("Disabled");
         adminPage.clickSearch();
         adminPage.checkSearchToastMessage("Invalid Parameter");
@@ -122,7 +122,7 @@ public class AdminSearchTests {
 
     //Valid Search Combinations
     @Test
-    public void UsernameRole() throws InterruptedException {
+    public void usernameRole() throws InterruptedException {
         adminPage.searchUsername(VALID_S_USERNAME);
         adminPage.selectOptionRole("ESS");
         adminPage.clickSearch();
@@ -130,7 +130,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void UsernameRoleName() throws InterruptedException {
+    public void usernameRoleName() throws InterruptedException {
         adminPage.searchUsername(VALID_S_USERNAME);
         adminPage.selectOptionRole("ESS");
         adminPage.searchName(VALID_S_NAME);
@@ -140,7 +140,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void UsernameRoleNameStatus() throws InterruptedException {
+    public void usernameRoleNameStatus() throws InterruptedException {
         adminPage.searchUsername(VALID_S_USERNAME);
         adminPage.selectOptionRole("ESS");
         adminPage.searchName(VALID_S_NAME);
@@ -152,7 +152,7 @@ public class AdminSearchTests {
 
     //Invalid Search Combinations
     @Test
-    public void OKusernameNOKrole() throws InterruptedException {
+    public void oKusernameNOKrole() throws InterruptedException {
         adminPage.searchUsername(VALID_S_USERNAME);
         adminPage.selectOptionRole("Admin");
         adminPage.clickSearch();
@@ -162,7 +162,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void OKusernameOKroleNOKname() throws InterruptedException {
+    public void oKusernameOKroleNOKname() throws InterruptedException {
         adminPage.searchUsername(VALID_S_USERNAME);
         adminPage.selectOptionRole("ESS");
         adminPage.searchName("d");
@@ -174,7 +174,7 @@ public class AdminSearchTests {
     }
 
     @Test
-    public void OKusernameOKroleOKnameNOKstatus() throws InterruptedException {
+    public void oKusernameOKroleOKnameNOKstatus() throws InterruptedException {
         adminPage.searchUsername(VALID_S_USERNAME);
         adminPage.selectOptionRole("ESS");
         adminPage.searchName(VALID_S_NAME);
