@@ -1,5 +1,5 @@
 ﻿# SeleniumJava
-Collection of automated tests using the Selenium, Java and Page Object Model.
+Collection of automated tests using Selenium, Java and Page Object Model.
 <br><br>
 ## Tested sections:
 * Login page
