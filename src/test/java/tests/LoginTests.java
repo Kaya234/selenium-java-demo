@@ -36,7 +36,7 @@ public class LoginTests {
     }
 
     @Test
-    public void WithoutCredentials() throws InterruptedException {
+    public void withoutCredentials() throws InterruptedException {
         loginPage.clickLogin();
         loginPage.checkInputErrorUsername();
         loginPage.checkInputErrorPassword();
@@ -44,7 +44,7 @@ public class LoginTests {
     }
 
     @Test
-    public void WithoutUsername() throws InterruptedException {
+    public void withoutUsername() throws InterruptedException {
         loginPage.enterUsername(VALID_NAME);
         loginPage.clickLogin();
         loginPage.checkInputErrorPassword();
@@ -52,7 +52,7 @@ public class LoginTests {
     }
 
     @Test
-    public void WithoutPassword() throws InterruptedException {
+    public void withoutPassword() throws InterruptedException {
         loginPage.enterPassword(VALID_PASSWORD);
         loginPage.clickLogin();
         loginPage.checkInputErrorUsername();
@@ -60,7 +60,7 @@ public class LoginTests {
     }
 
     @Test
-    public void ValidCredentials() throws InterruptedException {
+    public void validCredentials() throws InterruptedException {
         loginPage.enterUsername(VALID_NAME);
         loginPage.enterPassword(VALID_PASSWORD);
         loginPage.clickLogin();
@@ -69,7 +69,7 @@ public class LoginTests {
     }
 
     @Test
-    public void InvalidUsername() throws InterruptedException {
+    public void invalidUsername() throws InterruptedException {
         loginPage.enterUsername("admi");
         loginPage.enterPassword(VALID_PASSWORD);
         loginPage.clickLogin();
@@ -78,7 +78,7 @@ public class LoginTests {
     }
 
     @Test
-    public void InvalidPassword() throws InterruptedException {
+    public void invalidPassword() throws InterruptedException {
         loginPage.enterUsername(VALID_PASSWORD);
         loginPage.enterPassword("Admin123");
         loginPage.clickLogin();
